@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoPe</title>
+    <!-- You can link your CSS file for styling here -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Verdana, sans-serif;
+        }
+
+        header {
+            background-color: #420c09;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+			font-family: Courier New;
+            font-size: 24px;
+            font-weight: bold;
+            display: inline-block;
+            margin: 0;
+			line-height:2px;
+			margin-bottom: 0 px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+		.container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .welcome-message {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .post {
+            background-color: #f9f9f9;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .post h2 {
+            margin-top: 0;
+        }
+
+        .post p {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"> 
+            <h1> CoPe </h1>
+            <h4 style="font-family: Times New Romans; letter-spacing:1px;"> Connect Petrines </h4>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Friends</a></li>
+                <li><a href="#">Messages</a></li>
+                <li><a href="#">My Tasks</a></li>
+            </ul>
+        </nav>
+    </header>
+     <main class="container">
+        <div class="welcome-message">
+            <h2>Welcome to CoPe - Connect Petrines</h2>
+            <p>This is a social networking platform for Petrines. Stay connected with your friends, manage your tasks, and more!</p>
+        </div>
+        <div class="post">
+            <h2>Latest Posts</h2>
+            <p>Here you can display the latest posts from users.</p>
+        </div>
+        <!-- Add more content as needed -->
+    </main>
+    <footer>
+        <p>&copy; 2024 My Social Network</p>
+    </footer>
+</body>
+</html>

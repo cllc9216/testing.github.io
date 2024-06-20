@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoPe - Friends</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+       body {
+            margin: 0;
+            font-family: Verdana, sans-serif;
+        }
+
+        header {
+            background-color: #420c09;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+			font-family: Courier New;
+            font-size: 24px;
+            font-weight: bold;
+            display: inline-block;
+            margin: 0;
+			line-height:2px;
+			margin-bottom: 0 px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+		.container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .welcome-message {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .friend-list {
+            margin-bottom: 20px;
+        }
+
+        .friend {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .friend h3 {
+            margin-top: 0;
+        }
+
+        .friend p {
+            margin-bottom: 5px;
+        }
+		.friend {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.profile-pic {
+    width: 60px;
+    height: 60px;
+    background-color: #ddd; /* Placeholder color for profile picture */
+    border-radius: 50%; /* Make it a circle */
+    margin-right: 15px;
+	}
+
+	.friend-details {
+		flex: 1;
+	}
+
+	.friend-details h3 {
+		margin-top: 0;
+	}
+
+	.friend-details p {
+		margin: 5px 0;
+	}
+	.friend {
+		display: flex;
+		align-items: center;
+		border: 1px solid #ccc;
+		border-radius: 10px;
+		padding: 10px;
+		margin-bottom: 10px;
+	}
+
+	.profile-pic {
+		width: 60px;
+		height: 60px;
+		border: 2px solid #aaa; /* Frame around the profile picture */
+		border-radius: 50%; /* Make it a circle */
+		overflow: hidden; /* Hide the overflow from circular frame */
+		margin-right: 15px;
+	}
+
+	.profile-pic img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover; /* Maintain aspect ratio and cover the entire area */
+	}
+
+	.friend-details {
+		flex: 1;
+	}
+
+	.friend-details h3 {
+		margin-top: 0;
+	}
+
+	.friend-details p {
+		margin: 5px 0;
+	}
+	
+        .add-friend {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .add-friend input[type="text"] {
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 200px;
+            margin-right: 10px;
+        }
+
+        .add-friend button {
+            padding: 8px 20px;
+            border-radius: 5px;
+            background-color: #420c09;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        /* Add additional styles for message page if needed */
+        .friend-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .friend {
+            background-color: #f9f9f9;
+            padding: 10px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .friend:hover {
+            background-color: #e0e0e0;
+        }
+
+        .message-box {
+            display: none;
+            padding: 20px;
+            background-color: #f0f0f0;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        .message-box iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+        }
+        .friend {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .profile-pic {
+            width: 60px;
+            height: 60px;
+            border: 2px solid #aaa; /* Frame around the profile picture */
+            border-radius: 50%; /* Make it a circle */
+            overflow: hidden; /* Hide the overflow from circular frame */
+            margin-right: 15px;
+        }
+
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Maintain aspect ratio and cover the entire area */
+        }
+
+        .friend-details {
+            flex: 1;
+        }
+
+        .friend-details h3 {
+            margin-top: 0;
+        }
+
+        .friend-details p {
+            margin: 5px 0;
+        }
+      
+		.nav-button {
+    background-color: #420c09;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.nav-button:hover {
+    background-color: #5e1c19;
+    text-decoration: none;
+}
+    </style>
+</head>
+<body>
+   <header>
+        <div class="logo"> 
+            <h1> CoPe </h1>
+            <h4> Connect Petrines </h4>
+        </div>
+        <nav>
+            <ul>
+        <li><a href="file:///C:/Users/Acer/Desktop/Htmls/homepage.html" class="nav-button">Home</a></li>
+        <li><a href="file:///C:/Users/Acer/Desktop/Htmls/profile%20page.html" class="nav-button">Profile</a></li>
+        <li><a href="file:///C:/Users/Acer/Desktop/Htmls/friends%20page.html" class="nav-button">Friends</a></li>
+        <li><a href="file:///C:/Users/Acer/Desktop/Htmls/my%20task%20current%20tasks.html" class="nav-button">My Tasks</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+        <div class="welcome-message">
+            <h2>Welcome to CoPe - Connect Petrines</h2>
+            <p>Here you can view your friends and stay connected!</p>
+        </div>
+        <div class="add-friend">
+            <input type="text" placeholder="Search for friends...">
+            <button>Add Friend</button>
+        </div>
+        <div class="friend-list">
+            <div class="friend" onclick="showMessages('Emchie Mae Soon')">
+                <div class="profile-pic">
+                    <img src="C:\Users\Acer\Downloads\pfp ni emchie.jpg">
+                </div>
+                <div class="friend-details">
+                    <h3>Emchie Mae Soon</h3>
+                    <p>Username: emchiesoon@gmail.com</p>
+                    <p>School: ASPC</p>
+                    <p>Class: 12</p>
+                    <p>Section: STTVT</p>
+                </div>
+            </div>
+            <div class="friend" onclick="showMessages('Si crush')">
+                <div class="profile-pic"></div>
+                <div class="friend-details">
+                    <h3>Si crush</h3>
+                    <p>Username: unkown</p>
+                    <p>School: USJR</p>
+                    <p>Class: unkown</p>
+                    <p>Section: unkown</p>
+                </div>
+            </div>
+            <div class="friend" onclick="showMessages('Alan Claron Rodrigo')">
+                <div class="profile-pic">
+                    <img src="C:\Users\Acer\Downloads\pfp ni alan.jpg">
+                </div>
+                <div class="friend-details">
+                    <h3>Alan Claron Rodrigo</h3>
+                    <p>Username: alanrodrigo@gmail.com</p>
+                    <p>School: ASPC</p>
+                    <p>Class: 12</p>
+                    <p>Section: STTVT</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 CoPe - Connect Petrines</p>
+    </footer>
+    <script>
+        function showMessages(friendName) {
+            var messageUrls = {
+                "Emchie Mae Soon": "file:///C:/Users/Acer/Desktop/Htmls/messages%20ni%20emchie.html#",
+                "Si crush": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRNfQ_u0XvlKYqOCw5hXbOFIaxbTNEuGj2swbxvUtsjA&s",
+                "Alan Claron Rodrigo": "file:///C:/Users/Acer/Desktop/Htmls/messages%20ni%20alan.html#",
+            };
+
+            window.location.href = messageUrls[friendName];
+        }
+    </script>
+</body>
+</html>

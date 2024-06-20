@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages with Emchie Mae Soon</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Custom styles for message page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            margin: 0; /* Remove default margin */
+            padding-top: 60px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+        }
+
+        .message-container {
+            display: flex; /* Align messages horizontally */
+            flex-direction: column; /* Stack messages vertically */
+            padding: 20px;
+            overflow-y: scroll;
+            max-height: 500px;
+        }
+
+        .message {
+            margin-bottom: 20px;
+        }
+
+        .message p {
+            padding: 10px;
+            border-radius: 20px;
+            max-width: 70%;
+        }
+
+        .message.sender p {
+            background-color: #0084ff;
+            color: white;
+            align-self: flex-end; /* Align sender messages to the right */
+        }
+
+        .message.receiver p {
+            background-color: #f3f3f3;
+            color: black;
+            align-self: flex-start; /* Align receiver messages to the left */
+        }
+
+        .input-container {
+            margin-top: 20px;
+            display: flex; /* Align input field and button horizontally */
+            align-items: center; /* Align vertically */
+        }
+
+        .input-container input {
+            flex: 1; /* Take remaining space */
+            padding: 10px;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .input-container button {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            background-color: #0084ff;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        header {
+            position: fixed; /* Fixed position for header */
+            top: 0; /* Align to top */
+            left: 0; /* Align to left */
+            width: 100%; /* Full width */
+            background-color: #420c09;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000; /* Ensure it's above other content */
+        }
+
+        .logo {
+            font-family: Courier New;
+            font-size: 24px;
+            font-weight: bold;
+            display: inline-block;
+            margin: 0;
+            line-height:2px;
+            margin-bottom: 0 px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+		
+		.nav-button {
+    background-color: #420c09;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.nav-button:hover {
+    background-color: #5e1c19;
+    text-decoration: none;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"> 
+            <h1> CoPe </h1>
+            <h4> Connect Petrines </h4>
+        </div>
+        <nav>
+            <ul>
+        <li><a href="file:///C:/Users/Acer/Desktop/Htmls/homepage.html" class="nav-button">Home</a></li>
+        <li><a href="file:///C:/Users/Acer/Desktop/Htmls/profile%20page.html" class="nav-button">Profile</a></li>
+        <li><a href="file:///C:/Users/Acer/Desktop/Htmls/friends%20page.html" class="nav-button">Friends</a></li>
+        <li><a href="#" class="nav-button">My Tasks</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+        <h2>Emchie Mae Soon</h2>
+        <div class="message-container">
+            <!-- Messages between you and Emchie Mae Soon -->
+            <div class="message sender">
+                <p>Hello mhiemabells</p>
+            </div>
+            <div class="message receiver">
+                <p>Hai mhieee</p>
+            </div>
+            <div class="message sender">
+                <p>naa koy chicka</p>
+            </div>
+            <div class="message receiver">
+                <p>omg what has happened</p>
+            </div>
+            <div class="message sender">
+                <p>naa koy bag-o crush</p>
+            </div>			
+            <!-- Add more messages here -->
+        </div>
+        <div class="input-container">
+            <input type="text" placeholder="Type a message...">
+            <button>Send</button>
+        </div>
+    </main>
+</body>
+</html>

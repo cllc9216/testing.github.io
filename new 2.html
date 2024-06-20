@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoPe - Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+       body {
+            margin: 0;
+            font-family: Verdana, sans-serif;
+        }
+
+        header {
+            background-color: #420c09;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+			font-family: Courier New;
+            font-size: 24px;
+            font-weight: bold;
+            display: inline-block;
+            margin: 0;
+			line-height:2px;
+			margin-bottom: 0 px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+		.container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .welcome-message {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .post {
+            background-color: #f9f9f9;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        .post h2 {
+            margin-top: 0;
+        }
+
+        .post p {
+            margin-bottom: 10px;
+        }
+
+        .post img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .reactions {
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .reactions span {
+            margin-right: 20px;
+            cursor: pointer;
+        }
+
+        .comments {
+            margin-top: 20px;
+        }
+
+        .comment {
+            margin-bottom: 10px;
+        }
+
+        .comment p {
+            margin: 0;
+        }
+		.nav-button {
+    background-color: #420c09;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.nav-button:hover {
+    background-color: #5e1c19;
+    text-decoration: none;
+}
+	.user-post {
+		display: grid;
+		grid-template-columns: auto 1fr; /* User info takes up the first column, content takes up the rest */
+		align-items: center; /* Align items vertically */
+	}
+
+	.user-info {
+		display: flex; /* Ensure user info items are displayed in a row */
+		align-items: center; /* Align items vertically */
+	}
+
+	.user-pic {
+		width: 50px; /* Adjust width as needed */
+		height: 50px; /* Adjust height as needed */
+		border-radius: 50%;
+		overflow: hidden;
+		margin-right: 10px; /* Adjust margin as needed */
+	}
+
+	.user-pic img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.username {
+		margin: 0; /* Reset margin */
+	}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"> 
+            <h1> CoPe </h1>
+            <h4> Connect Petrines </h4>
+        </div>
+        <nav>
+     <ul>
+        <li><a href="file:///C:/Users/Acer/Desktop/Htmls/homepage.html" class="nav-button">Home</a></li>
+        <li><a href="file:///C:/Users/Acer/Desktop/Htmls/profile%20page.html" class="nav-button">Profile</a></li>
+        <li><a href="file:///C:/Users/Acer/Desktop/Htmls/friends%20page.html" class="nav-button">Friends</a></li>
+        <li><a href="#" class="nav-button">My Tasks</a></li>
+    </ul>
+        </nav>
+    </header>
+    <main class="container">
+        <div class="welcome-message">
+            <h2>Welcome to CoPe - Connect Petrines</h2>
+            <p>This is a social networking platform for Petrines. Stay connected with your friends, manage your tasks, and more!</p>
+        </div>
+			<div class="post">
+				<h2>Latest Posts</h2>
+				<div class="user-post">
+					<div class="user-info">
+						<div class="user-pic">
+							<img src="https://via.placeholder.com/150" alt="User Profile Picture">
+						</div>
+						<h3 class="username">User Name</h3>
+					</div>
+					<div class="post-content">
+						<p>This is the content of the post...</p>
+						<img src="https://via.placeholder.com/150" alt="User Post Image">
+					</div>
+					<div class="reactions">
+						<span>👍 Like</span>
+						<span>💬 Comment</span>
+						<span>🔁 Share</span>
+					</div>
+				</div>
+			</div>
+		<hr>
+        <div class="post">
+				<div class="user-post">
+					<div class="user-info">
+						<div class="user-pic">
+							<img src="https://via.placeholder.com/150" alt="User Profile Picture">
+						</div>
+						<h3 class="username">User Name</h3>
+					</div>
+					<div class="post-content">
+						<p>This is the content of the post...</p>
+						<img src="https://via.placeholder.com/150" alt="User Post Image">
+					</div>
+					<div class="reactions">
+						<span>👍 Like</span>
+						<span>💬 Comment</span>
+						<span>🔁 Share</span>
+					</div>
+				</div>
+        </div>
+        <hr>
+        <div class="post">
+				<div class="user-post">
+					<div class="user-info">
+						<div class="user-pic">
+							<img src="https://via.placeholder.com/150" alt="User Profile Picture">
+						</div>
+						<h3 class="username">User Name</h3>
+					</div>
+					<div class="post-content">
+						<p>This is the content of the post...</p>
+						<img src="https://via.placeholder.com/150" alt="User Post Image">
+					</div>
+					<div class="reactions">
+						<span>👍 Like</span>
+						<span>💬 Comment</span>
+						<span>🔁 Share</span>
+					</div>
+				</div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 CoPe - Connect Petrines</p>
+    </footer>
+</body>
+</html>

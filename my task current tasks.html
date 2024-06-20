@@ -1,0 +1,505 @@
+<!Doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoPe - My Task</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+       body {
+            margin: 0;
+            font-family: Verdana, sans-serif;
+        }
+
+        header {
+            background-color: #420c09;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+			font-family: Courier New;
+            font-size: 24px;
+            font-weight: bold;
+            display: inline-block;
+            margin: 0;
+			line-height:2px;
+			margin-bottom: 0 px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+		.container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .welcome-message {
+            text-align: center;
+            margin-bottom: 300px;
+        }
+
+        .post {
+            background-color: #f9f9f9;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        .post h2 {
+            margin-top: 0;
+        }
+
+        .post p {
+            margin-bottom: 10px;
+        }
+
+        .post img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .reactions {
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .reactions span {
+            margin-right: 20px;
+				cursor: pointer;
+			}
+
+			.comments {
+				margin-top: 20px;
+			}
+
+			.comment {
+				margin-bottom: 10px;
+			}
+
+			.comment p {
+				margin: 0;
+			}
+			.nav-button {
+		background-color: #420c09;
+		color: white;
+		padding: 8px 16px;
+		border-radius: 5px;
+		text-decoration: none;
+	}
+
+	.nav-button:hover {
+		background-color: #5e1c19;
+		text-decoration: none;
+	}
+		.user-post {
+			display: grid;
+			grid-template-columns: auto 1fr; /* User info takes up the first column, content takes up the rest */
+			align-items: center; /* Align items vertically */
+		}
+
+		.user-info {
+			display: flex; /* Ensure user info items are displayed in a row */
+			align-items: center; /* Align items vertically */
+		}
+
+		.user-pic {
+			width: 50px; /* Adjust width as needed */
+			height: 50px; /* Adjust height as needed */
+			border-radius: 50%;
+			overflow: hidden;
+			margin-right: 10px; /* Adjust margin as needed */
+		}
+
+		.user-pic img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		.username {
+			margin: 0; /* Reset margin */
+		}
+	.task-box {
+		display: flex;
+		align-items: center;
+		border: 1px solid #ddd;
+		border-radius: 5px;
+		padding: 10px;
+		margin-bottom: 10px;
+	}
+
+	.task-info {
+		display: flex;
+		align-items: center;
+		flex: 1;
+	}
+
+	.task-icon {
+		width: 40px;
+		height: 40px;
+		background-color: #ccc;
+		border-radius: 50%;
+		margin-right: 10px;
+		/* Add icon image or icon font */
+	}
+
+	.task-details {
+		flex: 1;
+	}
+
+	.task-title {
+		margin: 0;
+	}
+
+	.task-subject,
+	.task-teacher,
+	.task-expiry {
+		margin: 5px 0;
+	}
+
+	.start-button {
+		background-color: #420c09;
+		color: white;
+		padding: 8px 16px;
+		border-radius: 5px;
+		text-decoration: none;
+		cursor: pointer;
+		border: none;
+	}
+	.task-bar {
+    background-color: #f0f0f0;
+    padding: 10px;
+    width: 200px; /* Adjust width as needed */
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    overflow-y: auto;
+    z-index: 1; /* Ensure task bar appears above other content */
+}
+
+.task-bar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.task-bar li {
+    margin: 10px 0;
+}
+
+.task-tab {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.task-tab .emoji {
+    margin-right: 5px;
+}
+
+.logo {
+    margin-left: 220px; /* Adjust margin to leave space for the task bar */
+}
+
+	.task-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    font-size: 24px; /* Adjust icon size */
+}
+         .filter-section {
+            position: fixed;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            width: 220px;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-left: 1px solid #ddd;
+            z-index: 2;
+        }
+
+        .filter-section h3 {
+            margin-top: 0;
+        }
+
+        .filter-section label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .filter-section input[type="text"] {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"> 
+            <h1> CoPe </h1>
+            <h4> Connect Petrines </h4>
+        </div>
+        <nav>
+     <ul>
+        <li><a href="file:///C:/Users/Acer/Desktop/Htmls/homepage.html" class="nav-button">Home</a></li>
+        <li><a href="file:///C:/Users/Acer/Desktop/Htmls/profile%20page.html" class="nav-button">Profile</a></li>
+        <li><a href="file:///C:/Users/Acer/Desktop/Htmls/friends%20page.html" class="nav-button">Friends</a></li>
+        <li><a href="file:///C:/Users/Acer/Desktop/Htmls/my%20task%20current%20tasks.html" class="nav-button">My Tasks</a></li>
+    </ul>
+        </nav>
+    </header>
+	<div class="task-bar">
+    <ul>
+        <li><a href="#" class="task-tab" data-type="quiz"><span class="emoji">📝</span> Quiz</a></li>
+        <li><a href="#" class="task-tab" data-type="lesson"><span class="emoji">📕</span> Module & Lesson</a></li>
+<li><a href="file:///C:/Users/Acer/Desktop/Htmls/my%20task%20current%20tasks.html" class="task-tab"><span class="emoji">⏳</span> Current</a></li>
+<li><a href="file:///C:/Users/Acer/Desktop/Htmls/completed%20tasks.html" class="task-tab"><span class="emoji">✅</span> Completed</a></li>
+<li><a href="file:///C:/Users/Acer/Desktop/Htmls/expired%20tasks.html" class="task-tab"><span class="emoji">⌛</span> Expired</a></li>
+<li><a href="file:///C:/Users/Acer/Desktop/Htmls/upcoming%20tasks.html" class="task-tab"><span class="emoji">🔜</span> Upcoming</a></li>
+<li><a href="file:///C:/Users/Acer/Desktop/Htmls/favorite%20task.html" class="task-tab"><span class="emoji">⭐</span> Favorites</a></li>
+    </ul>
+</div>
+
+	    <div class="container">
+        <!-- Task Filter and Search -->
+        <div class="task-filter">
+            <!-- Icon tabs for filtering -->
+            <!-- Search input -->
+        </div>
+
+<div class="task-list">
+    <!-- Sample Task Box -->
+	<div class="task-box" value="Religious Education 3">
+		<div class="task-info">
+			<div class="task-icon">
+				📝 <!-- Quiz emoji -->
+			</div>
+			<div class="task-details">
+				<h2 class="task-title">Catholic Social Teaching Quiz</h2>
+				<p class="task-subject">Religious Education 3</p>
+				<p class="task-teacher">Mr. Junemark</p>
+				<p class="task-expiry">Expiry Date: May 15, 2024</p>
+			</div>
+		</div>
+		<button class="start-button">Start</button>
+	</div>
+	<div class="task-box">
+    <div class="task-info">
+        <div class="task-icon">
+            📕 <!-- Module and lesson emoji -->
+        </div>
+        <div class="task-details">
+            <h2 class="task-title">Electric Potential and Capacitance</h2>
+            <p class="task-subject">General Physics 2</p>
+            <p class="task-teacher">Ms. Repunte</p>
+            <p class="task-expiry">Expiry Date: May 18, 2024</p>
+        </div>
+    </div>
+    <button class="start-button">Start</button>
+</div>
+		<div class="task-box">
+		<div class="task-info">
+			<div class="task-icon">
+				📝 <!-- Quiz emoji -->
+			</div>
+			<div class="task-details">
+				<h2 class="task-title">Pre-finals in DRRR</h2>
+				<p class="task-subject">Disaster Readiness and Risk Reduction</p>
+				<p class="task-teacher">Mme. Sayloon</p>
+				<p class="task-expiry">Expiry Date: May 16, 2024</p>
+			</div>
+		</div>
+		<button class="start-button">Start</button>
+	</div>
+		<div class="task-box">
+    <div class="task-info">
+        <div class="task-icon">
+            📕 <!-- Module and lesson emoji -->
+        </div>
+        <div class="task-details">
+            <h2 class="task-title">Recognizing a potential market</h2>
+            <p class="task-subject">Entrepreneurship</p>
+            <p class="task-teacher">Ms. Daclan</p>
+            <p class="task-expiry">Expiry Date: May 20, 2024</p>
+        </div>
+				</div>
+		<button class="start-button">Start</button>
+	</div>
+    </div>
+		<div class="task-box">
+    <div class="task-info">
+        <div class="task-icon">
+            📕 <!-- Module and lesson emoji -->
+        </div>
+        <div class="task-details">
+            <h2 class="task-title">Cultural Dances</h2>
+            <p class="task-subject">Contemporary Arts in the Philippines</p>
+            <p class="task-teacher">Mr. Paquera</p>
+            <p class="task-expiry">Expiry Date: May 19, 2024</p>
+        </div>
+				</div>
+		<button class="start-button">Start</button>
+	</div>
+				<div class="task-box">
+    <div class="task-info" >
+        <div class="task-icon">
+            📕 <!-- Module and lesson emoji -->
+        </div>
+        <div class="task-details">
+            <h2 class="task-title">Euthanasia</h2>
+            <p class="task-subject">Religious Education 4</p>
+            <p class="task-teacher">Mr. Caballa</p>
+            <p class="task-expiry">Expiry Date: May 19, 2024</p>
+        </div>
+				</div>
+		<button class="start-button">Start</button>
+	</div>
+    </div>
+   
+		
+    <div class="container">
+        <div class="filter-section">
+            <h3>Filters</h3>
+            <label for="subject-filter">Subject:</label>
+            <select id="subject-filter">
+                <option value="">All</option>
+                <option value="Religious Education 3">Religious Education 3</option>
+                <option value="Religious Education 4">Religious Education 4</option>
+                <option value="Entrepreneurship">Entrepreneurship</option>
+                <option value="General Physics 2">General Physics 2</option>
+                <option value="General Physics 1">General Physics 1</option>
+                <option value="Contemporary Arts in the Philippines">Contemporary Arts in the Philippines</option>
+                <option value="Disaster Readiness and Risk Reduction">Disaster Readiness and Risk Reduction</option>
+                <option value="General Biology">General Biology</option>
+                <option value="Basic Calculus">Basic Calculus</option>
+                <option value="General Chemistry">General Chemistry</option>
+            </select>
+            <label for="date-order">Date Order:</label>
+            <select id="date-order">
+                <option value="ascending">Ascending</option>
+                <option value="descending">Descending</option>
+            </select>
+            <label for="search">Search:</label>
+            <input type="text" id="search" placeholder="Search tasks...">
+        </div>
+
+        <div class="task-list">
+            <!-- Task boxes -->
+        </div>
+    </div>
+
+  <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const subjectFilter = document.getElementById("subject-filter");
+            const dateOrder = document.getElementById("date-order");
+            const searchInput = document.getElementById("search");
+            const quizTab = document.querySelector('.task-tab[data-type="quiz"]');
+            const lessonTab = document.querySelector('.task-tab[data-type="lesson"]');
+
+            function filterTasksBySubject(subject) {
+                const taskBoxes = document.querySelectorAll(".task-box");
+                taskBoxes.forEach(function(taskBox) {
+                    const taskSubject = taskBox.querySelector(".task-subject").textContent.trim();
+                    if (!subject || taskSubject === subject) {
+                        taskBox.style.display = "flex";
+                    } else {
+                        taskBox.style.display = "none";
+                    }
+                });
+            }
+
+            function filterTasksByType(type) {
+                const taskBoxes = document.querySelectorAll(".task-box");
+                taskBoxes.forEach(function(taskBox) {
+                    const taskType = taskBox.querySelector(".task-icon").textContent.trim();
+                    if (!type || taskType === type) {
+                        taskBox.style.display = "flex";
+                    } else {
+                        taskBox.style.display = "none";
+                    }
+                });
+            }
+
+            function sortTasksByDate(order) {
+                const taskList = document.querySelector(".task-list");
+                const taskBoxes = taskList.querySelectorAll(".task-box");
+                const taskArray = Array.from(taskBoxes);
+                taskArray.sort(function(a, b) {
+                    const dateA = new Date(a.querySelector(".task-expiry").textContent.trim());
+                    const dateB = new Date(b.querySelector(".task-expiry").textContent.trim());
+                    return order === "ascending" ? dateA - dateB : dateB - dateA;
+                });
+                taskList.innerHTML = "";
+                taskArray.forEach(function(task) {
+                    taskList.appendChild(task);
+                });
+            }
+
+            subjectFilter.addEventListener("change", function() {
+                filterTasksBySubject(this.value);
+            });
+
+            dateOrder.addEventListener("change", function() {
+                sortTasksByDate(this.value);
+            });
+
+            searchInput.addEventListener("input", function() {
+                const searchTerm = this.value.trim().toLowerCase();
+                const taskBoxes = document.querySelectorAll(".task-box");
+                taskBoxes.forEach(function(taskBox) {
+                    const taskTitle = taskBox.querySelector(".task-title").textContent.trim().toLowerCase();
+                    if (taskTitle.includes(searchTerm)) {
+                        taskBox.style.display = "flex";
+                    } else {
+                        taskBox.style.display = "none";
+                    }
+                });
+            });
+
+            quizTab.addEventListener("click", function(e) {
+                e.preventDefault();
+                filterTasksByType("📝");
+            });
+
+            lessonTab.addEventListener("click", function(e) {
+                e.preventDefault();
+                filterTasksByType("📕");
+            });
+        });
+    </script>
+</body>
+</html>
